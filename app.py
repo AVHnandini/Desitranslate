@@ -8,7 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from translation_validator import RobustTranslationWrapper, TranslationValidator
 
 app = Flask(__name__)
-app.secret_key = 'desi_translate_secret_key_2026'
+app.secret_key = os.environ.get('SECRET_KEY', 'desi_translate_secret_key_2026')
 
 # Database setup
 DATABASE = 'users.db'
