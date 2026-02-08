@@ -33,14 +33,15 @@ function setupLogin() {
                 body: JSON.stringify({ username, password })
             });
             
-            const data = await response.json();
+            const text = await response.text();
+            const data = text ? JSON.parse(text) : {};
             
             if (response.ok) {
                 // Login successful
                 window.location.href = '/home';
             } else {
                 // Show error
-                showError(errorMessage, data.message);
+                showError(errorMessage, data.message || 'Login failed. Please try again.');
             }
         } catch (error) {
             showError(errorMessage, 'An error occurred. Please try again.');
@@ -82,11 +83,12 @@ function setupRegister() {
                 body: JSON.stringify({ username, email, password, confirm_password: confirmPassword })
             });
             
-            const data = await response.json();
+            const text = await response.text();
+            const data = text ? JSON.parse(text) : {};
             
             if (response.ok) {
                 // Show success message
-                showSuccess(successMessage, data.message);
+                showSuccess(successMessage, data.message || 'Registration successful!');
                 // Clear form
                 form.reset();
                 // Redirect to login after 2 seconds
@@ -95,7 +97,7 @@ function setupRegister() {
                 }, 2000);
             } else {
                 // Show error
-                showError(errorMessage, data.message);
+                showError(errorMessage, data.message || 'Registration failed. Please try again.');
             }
         } catch (error) {
             showError(errorMessage, 'An error occurred. Please try again.');

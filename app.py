@@ -78,22 +78,31 @@ def index_redirect():
 def login():
     """Login page and logic"""
     if request.method == 'POST':
-        data = request.get_json()
-        username = data.get('username')
-        password = data.get('password')
-        
-        conn = sqlite3.connect(DATABASE)
-        c = conn.cursor()
-        c.execute('SELECT id, password FROM users WHERE username = ?', (username,))
-        user = c.fetchone()
-        conn.close()
-        
-        if user and check_password_hash(user[1], password):
-            session['user_id'] = user[0]
-            session['username'] = username
-            return jsonify({'success': True, 'message': 'Login successful'}), 200
-        else:
-            return jsonify({'success': False, 'message': 'Invalid username or password'}), 401
+        try:
+            data = request.get_json()
+            if not data:
+                return jsonify({'success': False, 'message': 'Invalid request'}), 400
+            
+            username = data.get('username')
+            password = data.get('password')
+            
+            if not username or not password:
+                return jsonify({'success': False, 'message': 'Username and password required'}), 400
+            
+            conn = sqlite3.connect(DATABASE)
+            c = conn.cursor()
+            c.execute('SELECT id, password FROM users WHERE username = ?', (username,))
+            user = c.fetchone()
+            conn.close()
+            
+            if user and check_password_hash(user[1], password):
+                session['user_id'] = user[0]
+                session['username'] = username
+                return jsonify({'success': True, 'message': 'Login successful'}), 200
+            else:
+                return jsonify({'success': False, 'message': 'Invalid username or password'}), 401
+        except Exception as e:
+            return jsonify({'success': False, 'message': 'An error occurred'}), 500
     
     return render_template('login.html')
 
@@ -101,18 +110,27 @@ def login():
 def register():
     """Registration page and logic"""
     if request.method == 'POST':
-        data = request.get_json()
-        username = data.get('username')
-        email = data.get('email')
-        password = data.get('password')
-        confirm_password = data.get('confirm_password')
-        
-        if password != confirm_password:
-            return jsonify({'success': False, 'message': 'Passwords do not match'}), 400
-        
-        hashed_password = generate_password_hash(password)
-        
         try:
+            data = request.get_json()
+            if not data:
+                return jsonify({'success': False, 'message': 'Invalid request'}), 400
+            
+            username = data.get('username')
+            email = data.get('email')
+            password = data.get('password')
+            confirm_password = data.get('confirm_password')
+            
+            if not username or not email or not password:
+                return jsonify({'success': False, 'message': 'All fields are required'}), 400
+            
+            if password != confirm_password:
+                return jsonify({'success': False, 'message': 'Passwords do not match'}), 400
+            
+            if len(password) < 6:
+                return jsonify({'success': False, 'message': 'Password must be at least 6 characters'}), 400
+            
+            hashed_password = generate_password_hash(password)
+            
             conn = sqlite3.connect(DATABASE)
             c = conn.cursor()
             c.execute('INSERT INTO users (username, email, password) VALUES (?, ?, ?)',
@@ -122,6 +140,8 @@ def register():
             return jsonify({'success': True, 'message': 'Registration successful'}), 201
         except sqlite3.IntegrityError:
             return jsonify({'success': False, 'message': 'Username or email already exists'}), 400
+        except Exception as e:
+            return jsonify({'success': False, 'message': 'An error occurred during registration'}), 500
     
     return render_template('register.html')
 
