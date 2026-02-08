@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Desi Translate{% endblock %}
+
+{% block content %}
+<div class="home-container">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to Desi Translate</h1>
+            <p class="hero-subtitle">Professional Language Translation with Step-by-Step Explanations</p>
+            <div class="hero-accent"></div>
+        </div>
+    </section>
+    
+    <!-- Features Grid -->
+    <section class="features-section">
+        <h2 class="section-title">Our Translation Features</h2>
+        
+        <div class="features-grid">
+            <!-- Text/Voice Translator -->
+            <a href="{{ url_for('text_translator') }}" class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <h3>Text/Voice Translator</h3>
+                <p>Translate text and voice input with detailed grammar explanations and pronunciation guides</p>
+                <span class="feature-badge">Fast & Accurate</span>
+            </a>
+            
+            <!-- Idiom Translator -->
+            <a href="{{ url_for('idiom_translator') }}" class="feature-card">
+                <div class="feature-icon">💡</div>
+                <h3>Idiom Translator</h3>
+                <p>Convert English idioms and proverbs into target languages with cultural explanations</p>
+                <span class="feature-badge">Cultural Insights</span>
+            </a>
+            
+            <!-- Slang Normalizer -->
+            <a href="{{ url_for('slang_normalizer') }}" class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3>Slang Normalizer</h3>
+                <p>Transform chat abbreviations and internet slang into proper, formal English</p>
+                <span class="feature-badge">Professional Writing</span>
+            </a>
+            
+            <!-- Historical Translator -->
+            <a href="{{ url_for('historical_translator') }}" class="feature-card">
+                <div class="feature-icon">📜</div>
+                <h3>Historical Translator</h3>
+                <p>Convert Old English and colonial documents into modern English with etymological notes</p>
+                <span class="feature-badge">Linguistic History</span>
+            </a>
+            
+            <!-- Video Subtitle Translator -->
+            <a href="{{ url_for('video_translator') }}" class="feature-card">
+                <div class="feature-icon">🎬</div>
+                <h3>Subtitle Translator</h3>
+                <p>Extract and translate video subtitles while maintaining timing and context</p>
+                <span class="feature-badge">Multimedia Support</span>
+            </a>
+            
+            <!-- Chat Translator -->
+            <a href="{{ url_for('text_translator') }}" class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Chat Translator</h3>
+                <p>Real-time translation for messaging and chat applications in multiple languages</p>
+                <span class="feature-badge">Instant Communication</span>
+            </a>
+        </div>
+    </section>
+    
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <h2 class="section-title">How It Works</h2>
+        
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Input Your Text</h3>
+                <p>Enter text, voice, or upload a document for translation</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Select Target Language</h3>
+                <p>Choose from Hindi, Spanish, French, and more</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Get Translation</h3>
+                <p>Receive accurate translation instantly</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Learn Grammar Rules</h3>
+                <p>View step-by-step explanations of translation choices</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Translate?</h2>
+        <p>Start with our text translator and explore all features</p>
+        <a href="{{ url_for('text_translator') }}" class="btn btn-primary btn-lg">Get Started</a>
+    </section>
+</div>
+
+<script src="{{ url_for('static', filename='js/home.js') }}"></script>
+{% endblock %}

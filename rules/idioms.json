@@ -1,0 +1,189 @@
+{
+  "it's raining cats and dogs": {
+    "meaning": "It is raining very heavily",
+    "translations": {
+      "hindi": "तेज़ बारिश हो रही है",
+      "spanish": "Llueve a cántaros",
+      "french": "Il pleut des cordes"
+    },
+    "explanation": "This idiom means it's raining very heavily, not literally that cats and dogs are falling from the sky.",
+    "example": "We can't go to the park today because it's raining cats and dogs.",
+    "origin": "British/American idiom, origin uncertain, possibly dating back to Greek mythology"
+  },
+  "break a leg": {
+    "meaning": "Good luck with your performance or undertaking",
+    "translations": {
+      "hindi": "शुभकामनाएं / सफलता की कामना",
+      "spanish": "Mucho éxito",
+      "french": "Bonne chance"
+    },
+    "explanation": "Despite its literal meaning, this is said as an encouragement before a performance, especially in theater.",
+    "example": "Good luck on your presentation tomorrow - break a leg!",
+    "origin": "Theater tradition, exact origin unknown, possibly related to superstitions"
+  },
+  "piece of cake": {
+    "meaning": "Something very easy to do",
+    "translations": {
+      "hindi": "बहुत आसान",
+      "spanish": "Pan comido",
+      "french": "Un jeu d'enfant"
+    },
+    "explanation": "This idiom refers to something that is simple and easy, like eating a piece of cake.",
+    "example": "The math test was a piece of cake for Sarah.",
+    "origin": "American idiom, originated in the early 20th century"
+  },
+  "hit the nail on the head": {
+    "meaning": "To describe exactly what is wrong or what is the truth",
+    "translations": {
+      "hindi": "सही कहा / बिल्कुल सटीक",
+      "spanish": "Dar en el clavo",
+      "french": "Mettre le doigt sur le bobo"
+    },
+    "explanation": "This means to identify the exact problem or truth, much like driving a nail straight into its target.",
+    "example": "You hit the nail on the head when you said the project was failing due to poor communication.",
+    "origin": "Literal action of carpentry became metaphorical in the 16th century"
+  },
+  "once in a blue moon": {
+    "meaning": "Very rarely; almost never",
+    "translations": {
+      "hindi": "बहुत कम, शायद ही कभी",
+      "spanish": "De vez en cuando",
+      "french": "Une fois n'est pas coutume"
+    },
+    "explanation": "This idiom means something happens very infrequently, referring to the rare occurrence of a second full moon in a calendar month.",
+    "example": "I see my childhood friend once in a blue moon since we moved to different cities.",
+    "origin": "Based on the astronomical phenomenon of a second full moon in a month"
+  },
+  "barking up the wrong tree": {
+    "meaning": "To pursue a line of inquiry that is mistaken or unproductive",
+    "translations": {
+      "hindi": "गलत रास्ते पर जाना",
+      "spanish": "Ladrar al árbol equivocado",
+      "french": "Faire fausse route"
+    },
+    "explanation": "Like a hunting dog barking at the wrong tree when the prey is elsewhere, this means pursuing the wrong course of action.",
+    "example": "If you think he stole the money, you're barking up the wrong tree.",
+    "origin": "American frontier idiom from hunting traditions"
+  },
+  "the ball is in your court": {
+    "meaning": "It is now your responsibility to make the next decision or move",
+    "translations": {
+      "hindi": "अब तुम्हारी बारी है / जिम्मेदारी तुम्हारी है",
+      "spanish": "La pelota está en tu cancha",
+      "french": "La balle est dans ton camp"
+    },
+    "explanation": "This sports-related idiom indicates that someone else must now take action, just like in tennis or other court sports.",
+    "example": "I've made my offer; the ball is in your court now.",
+    "origin": "Sports idiom, likely from tennis"
+  },
+  "beat around the bush": {
+    "meaning": "To avoid talking about the main issue",
+    "translations": {
+      "hindi": "इधर-उधर की बातें करना",
+      "spanish": "Andar por las ramas",
+      "french": "Tourner autour du pot"
+    },
+    "explanation": "Instead of directly addressing the issue, one talks around it, like hunting by beating bushes to scare out prey.",
+    "example": "Stop beating around the bush and tell me what you really think!",
+    "origin": "Medieval hunting term"
+  },
+  "cost an arm and a leg": {
+    "meaning": "To be extremely expensive",
+    "translations": {
+      "hindi": "बहुत महंगा",
+      "spanish": "Costar un ojo de la cara",
+      "french": "Coûter un bras"
+    },
+    "explanation": "This exaggerated idiom means something costs a huge amount of money, suggesting it's worth sacrificing body parts.",
+    "example": "That new car cost an arm and a leg!",
+    "origin": "American idiom, origin uncertain, possibly from 17th-18th century"
+  },
+  "bite the dust": {
+    "meaning": "To fail or come to an end; to die",
+    "translations": {
+      "hindi": "विफल होना / मरना",
+      "spanish": "Morder el polvo",
+      "french": "Mordre la poussière"
+    },
+    "explanation": "This idiom originally meant to be knocked to the ground in battle, now meaning to fail or collapse.",
+    "example": "Our project finally bit the dust after months of struggles.",
+    "origin": "Ancient phrase, possibly from Homer's Iliad"
+  },
+  "piece of cake": {
+    "meaning": "Something very easy to do",
+    "translations": {
+      "hindi": "बहुत आसान",
+      "spanish": "Pan comido",
+      "french": "Un jeu d'enfant"
+    },
+    "explanation": "This idiom refers to something that is simple and easy, like eating a piece of cake.",
+    "example": "The math test was a piece of cake for Sarah.",
+    "origin": "American idiom, originated in the early 20th century"
+  },
+  "break a leg": {
+    "meaning": "Good luck with your performance or undertaking",
+    "translations": {
+      "hindi": "शुभकामनाएं",
+      "spanish": "Mucho éxito",
+      "french": "Bonne chance"
+    },
+    "explanation": "Despite its literal meaning, this is said as an encouragement before a performance, especially in theater.",
+    "example": "Good luck on your presentation tomorrow - break a leg!",
+    "origin": "Theater tradition, exact origin unknown, possibly related to superstitions"
+  },
+  "cost an arm and a leg": {
+    "meaning": "Be very expensive",
+    "translations": {
+      "hindi": "बहुत महंगा होना",
+      "spanish": "Costar un ojo de la cara",
+      "french": "Coûter les yeux de la tête"
+    },
+    "explanation": "Something that costs a lot of money, implying it's worth sacrificing a lot for.",
+    "example": "That vacation cost us an arm and a leg.",
+    "origin": "Origin uncertain, likely from American English"
+  },
+  "better half": {
+    "meaning": "One's spouse or partner",
+    "translations": {
+      "hindi": "जीवन साथी",
+      "spanish": "La otra mitad",
+      "french": "L'autre moitié"
+    },
+    "explanation": "A loving way to refer to a husband or wife, the other half that completes you.",
+    "example": "I'm going to the party with my better half.",
+    "origin": "English phrase dating back to at least the 17th century"
+  },
+  "at the end of the day": {
+    "meaning": "When everything is considered; ultimately",
+    "translations": {
+      "hindi": "आखिरकार",
+      "spanish": "Al final del día",
+      "french": "À la fin de la journée"
+    },
+    "explanation": "When all factors are taken into account, in the final analysis.",
+    "example": "At the end of the day, what matters most is our family.",
+    "origin": "Modern English phrase, often used as a transition"
+  },
+  "time is money": {
+    "meaning": "Time is valuable and shouldn't be wasted",
+    "translations": {
+      "hindi": "समय ही धन है",
+      "spanish": "El tiempo es oro",
+      "french": "Le temps, c'est de l'argent"
+    },
+    "explanation": "Time should be used productively as it has economic value.",
+    "example": "Stop procrastinating; time is money!",
+    "origin": "American Benjamin Franklin popularized this phrase"
+  },
+  "it's raining cats and dogs": {
+    "meaning": "It is raining very heavily",
+    "translations": {
+      "hindi": "तेज़ बारिश हो रही है",
+      "spanish": "Llueve a cántaros",
+      "french": "Il pleut des cordes"
+    },
+    "explanation": "This idiom means it's raining very heavily, not literally that cats and dogs are falling from the sky.",
+    "example": "We can't go to the park today because it's raining cats and dogs.",
+    "origin": "British/American idiom, origin uncertain, possibly dating back to Greek mythology"
+  }
+}

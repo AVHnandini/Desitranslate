@@ -1,0 +1,125 @@
+{
+  "pos_tags": {
+    "noun": {"symbol": "N", "description": "Person, place, thing, or idea", "hindi_mark": "संज्ञा", "telugu_mark": "నామపదం", "tamil_mark": "பெயரெச்சம்"},
+    "verb": {"symbol": "V", "description": "Action or state of being", "hindi_mark": "क्रिया", "telugu_mark": "క్రియ", "tamil_mark": "வினை"},
+    "adjective": {"symbol": "ADJ", "description": "Describes or modifies a noun", "hindi_mark": "विशेषण", "telugu_mark": "విశేషణం", "tamil_mark": "பெயரடை"},
+    "adverb": {"symbol": "ADV", "description": "Modifies verb, adjective, or adverb", "hindi_mark": "क्रियाविशेषण", "telugu_mark": "క్రియా విశేషణం", "tamil_mark": "வினையடை"},
+    "pronoun": {"symbol": "PRO", "description": "Replaces a noun", "hindi_mark": "सर्वनाम", "telugu_mark": "సర్వనామం", "tamil_mark": "பெயர்களைக்குறிப்பது"},
+    "preposition": {"symbol": "PREP", "description": "Shows relationship between words", "hindi_mark": "संबंध शब्द", "telugu_mark": "సంబంధ పదం", "tamil_mark": "உறவுச்சொல்"},
+    "conjunction": {"symbol": "CONJ", "description": "Joins words or clauses", "hindi_mark": "संयोजन", "telugu_mark": "సంధానం", "tamil_mark": "இணைப்பு"},
+    "interjection": {"symbol": "INT", "description": "Expresses emotion or surprise", "hindi_mark": "विस्मयादिबोधक", "telugu_mark": "ఆశ్చర్యాభిధానం", "tamil_mark": "விலக்கணச்சொல்"}
+  },
+  "tense_rules": {
+    "present_simple": {
+      "english_pattern": "verb as-is",
+      "hindi_pattern": "verb + ता/ती + हूँ/है/हैं",
+      "detection": ["does", "do", "is", "are"],
+      "example": "I read the book → मैं किताब पढ़ता हूँ"
+    },
+    "past_simple": {
+      "english_pattern": "verb+ed or irregular",
+      "hindi_pattern": "verb + ा/ी + था/थी/थे",
+      "detection": ["was", "were", "did"],
+      "example": "I read the book → मैं किताब पढ़ता था"
+    },
+    "future_simple": {
+      "english_pattern": "will + verb",
+      "hindi_pattern": "verb + ूंगा/ूंगी + हूँ",
+      "detection": ["will", "shall"],
+      "example": "I will read the book → मैं किताब पढ़ूंगा"
+    }
+  },
+  "svo_sov_rules": {
+    "english_structure": {"order": "SVO", "description": "Subject-Verb-Object"},
+    "hindi_structure": {"order": "SOV", "description": "Subject-Object-Verb"},
+    "telugu_structure": {"order": "SOV", "description": "Subject-Object-Verb"},
+    "tamil_structure": {"order": "SOV", "description": "Subject-Object-Verb"},
+    "spanish_structure": {"order": "SVO", "description": "Subject-Verb-Object"},
+    "french_structure": {"order": "SVO", "description": "Subject-Verb-Object"},
+    "transformation": "When translating from English (SVO) to Indian languages (SOV), move verb to end of clause"
+  },
+  "auxiliary_verb_rules": {
+    "english_auxiliaries": ["is", "are", "was", "were", "do", "does", "did", "will", "shall", "can", "could", "may", "might", "must", "should", "would"],
+    "hindi_handling": "Merge auxiliary with main verb or replace with appropriate form",
+    "telugu_handling": "Merge or omit based on tense requirement",
+    "tamil_handling": "Merge with main verb in suffix form",
+    "example": "I am reading → मैं पढ़ रहा हूँ (pढ़ रहा हूँ includes 'am' meaning)"
+  },
+  "gender_rules": {
+    "hindi": {
+      "description": "Hindi nouns have grammatical gender",
+      "masculine_endings": ["ा", "ल", "ण", "त"],
+      "feminine_endings": ["ी", "या", "आ"],
+      "example": "लड़का (boy-masculine) vs लड़की (girl-feminine)"
+    },
+    "telugu": {
+      "description": "Telugu nouns have gender reflected in adjectives",
+      "marking": "Gender shown in agreement with adjectives",
+      "example": "పెద్ద (masculine) vs పెద్ద (feminine variant)"
+    },
+    "tamil": {
+      "description": "Tamil marks gender in verbs and adjectives",
+      "masculine": "Default in many contexts",
+      "feminine": "Special endings added",
+      "neutral": "Used for non-human nouns"
+    }
+  },
+  "verb_conjugation": {
+    "hindi": {
+      "description": "Hindi verbs change based on subject, tense, and aspect",
+      "first_person": "verb + ता हूँ (masculine singular)",
+      "example": "करना (to do) → करता हूँ (I do)"
+    },
+    "telugu": {
+      "description": "Telugu verbs conjugate based on person and tense",
+      "first_person": "verb + ను/ను",
+      "example": "చెయ్యు (to do) → చేస్తాను (I do)"
+    },
+    "tamil": {
+      "description": "Tamil verbs show tense through suffix",
+      "first_person": "verb + ै (present) / verb + ैन (past)",
+      "example": "पै्य् (to do) → पै्क्किरै (I do)"
+    }
+  },
+  "pluralization": {
+    "hindi": {
+      "method": "Context-based, some suffix additions",
+      "singular": "एक पेड़ (one tree)",
+      "plural": "कई पेड़ (many trees)"
+    },
+    "telugu": {
+      "method": "Add plural markers like -ులు",
+      "singular": "చెట్టు (one tree)",
+      "plural": "చెట్టులు (many trees)"
+    },
+    "tamil": {
+      "method": "Add plural suffix -கள்",
+      "singular": "मरம् (one tree)",
+      "plural": "मरमु्हुकल् (many trees)"
+    }
+  },
+  "word_order": {
+    "english": {"order": "SVO", "example": "I read a book", "structure": "Subject → Verb → Object"},
+    "hindi": {"order": "SOV", "example": "मैं किताब पढ़ता हूँ", "structure": "Subject → Object → Verb"},
+    "telugu": {"order": "SOV", "example": "నేను పుస్తకం చదువుతాను", "structure": "Subject → Object → Verb"},
+    "tamil": {"order": "SOV", "example": "நான் புத்தகம் படிக்கிறேன்", "structure": "Subject → Object → Verb"},
+    "spanish": {"order": "SVO", "example": "Yo leo un libro", "structure": "Subject → Verb → Object"},
+    "french": {"order": "SVO", "example": "Je lis un livre", "structure": "Subject → Verb → Object"}
+  },
+  "linguistic_analysis": {
+    "subject_detection": ["I", "you", "he", "she", "it", "we", "they"],
+    "verb_detection": ["run", "walk", "read", "write", "play", "eat", "sleep", "speak", "listen", "see"],
+    "object_detection": "Nouns that are not subjects",
+    "auxiliary_merging": "Combine auxiliary verbs with main verbs when translating to Indian languages",
+    "word_order_change": "English SVO becomes Indian SOV - move verb to end",
+    "tense_preservation": "Extract tense from auxiliary and apply to verb conjugation in target language"
+  },
+  "explanation_templates": {
+    "svo_to_sov": "The word order changed from English SVO (Subject-Verb-Object) to {language} SOV (Subject-Object-Verb). The verb moved to the end of the sentence.",
+    "auxiliary_merge": "The auxiliary verb '{aux}' was merged with the main verb '{verb}' in the target language because {reason}.",
+    "tense_change": "The tense '{english_tense}' was expressed through verb conjugation in the target language.",
+    "gender_agreement": "The word '{word}' took a {gender} form to agree with the noun it modifies.",
+    "unknown_word": "The word '{word}' was not found in the dictionary. It is shown as-is in the translation."
+  }
+}
+

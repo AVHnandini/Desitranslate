@@ -1,0 +1,242 @@
+{% extends "base.html" %}
+
+{% block title %}Idiom Translator - Desi Translate{% endblock %}
+
+{% block content %}
+<div class="translator-container">
+    <div class="translator-header">
+        <h1>Idiom & Proverb Translator</h1>
+        <p>Convert English idioms and proverbs to target languages with cultural meanings</p>
+    </div>
+    
+    <div class="translator-main">
+        <!-- Input Section -->
+        <div class="translator-section input-section">
+            <div class="section-header">
+                <h2>English Idiom</h2>
+            </div>
+            
+            <input type="text" id="idiomInput" class="text-input" placeholder="Enter an English idiom (e.g., 'break a leg', 'piece of cake')" />
+            
+            <div class="input-controls">
+                <button id="clearBtn" class="btn btn-secondary">Clear</button>
+                <button id="speakInputBtn" class="btn btn-secondary" title="Speak idiom">🔊 Speak</button>
+            </div>
+        </div>
+        
+        <div class="translator-arrow"><span>⇓</span></div>
+        
+        <!-- Output Section -->
+        <div class="translator-section output-section">
+            <div class="section-header">
+                <h2>Translation & Meaning</h2>
+                <span id="confidenceScore" class="confidence-badge">--</span>
+            </div>
+            
+            <div class="language-selector">
+                <label>Target Language:</label>
+                <select id="targetLang" class="lang-select">
+                    <option value="hindi">Hindi (हिन्दी)</option>
+                    <option value="telugu">Telugu (తెలుగు)</option>
+                    <option value="tamil">Tamil (தமிழ்)</option>
+                </select>
+            </div>
+            
+            <div id="idiomResult" class="idiom-result placeholder">
+                <p>Translate an idiom to see its meaning and translation</p>
+            </div>
+            
+            <div class="output-controls">
+                <button id="copyBtn" class="btn btn-secondary" style="display:none;">📋 Copy</button>
+                <button id="speakTranslationBtn" class="btn btn-secondary" style="display:none;" title="Speak translation">🔊 Speak</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Translate Button -->
+    <div class="translate-button-container">
+        <button id="translateBtn" class="btn btn-primary btn-lg">
+            <span class="btn-text">Translate Idiom</span>
+            <span class="btn-icon">→</span>
+        </button>
+    </div>
+    
+    <!-- Detailed Information Panel -->
+    <div class="information-panels">
+        <!-- Explanation Panel -->
+        <div class="explanation-panel">
+            <div class="panel-header">
+                <h2>📖 Detailed Explanation</h2>
+                <button id="toggleExplanationPanel" class="btn btn-icon">▼</button>
+            </div>
+            
+            <div class="panel-content">
+                <div id="explanationContent" class="explanation-content placeholder">
+                    <p>Information about idiom origins and usage will appear here</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Example Usage Panel -->
+        <div class="example-panel">
+            <div class="panel-header">
+                <h2>💡 Example Usage</h2>
+                <button id="toggleExamplePanel" class="btn btn-icon">▼</button>
+            </div>
+            
+            <div class="panel-content">
+                <div id="exampleContent" class="example-content placeholder">
+                    <p>Example sentences will appear here</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quick Reference Panel -->
+        <div class="reference-panel">
+            <div class="panel-header">
+                <h2>🎯 Quick Reference</h2>
+                <button id="toggleReferencePanel" class="btn btn-icon">▼</button>
+            </div>
+            
+            <div class="panel-content">
+                <div id="referenceContent" class="reference-content placeholder">
+                    <p>Quick reference information will appear here</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Pronunciation Guide Panel -->
+    <div class="pronunciation-panel">
+        <div class="panel-header">
+            <h2>🎙️ Pronunciation Guide</h2>
+            <button id="togglePronunciationPanel" class="btn btn-icon">▼</button>
+        </div>
+        
+        <div class="panel-content">
+            <div id="pronunciationContent" class="pronunciation-content placeholder">
+                <p>Pronunciation guides will appear here</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.information-panels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .information-panels {
+        grid-template-columns: 1fr;
+    }
+}
+
+.explanation-panel, .example-panel, .reference-panel, .pronunciation-panel {
+    background: #e6f2ff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #99d5ff;
+}
+
+.panel-header {
+    background: linear-gradient(135deg, #1e40af 0%, #06b6d4 100%);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panel-header h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+}
+
+.panel-header .btn-icon {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.panel-header .btn-icon:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.panel-content {
+    padding: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.example-content, .reference-content, .pronunciation-content {
+    line-height: 1.6;
+}
+
+.pronunciation-item {
+    background: #e6f2ff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border-left: 3px solid #1e40af;
+}
+
+.pronunciation-item-lang {
+    font-weight: 600;
+    color: #1e40af;
+    margin-bottom: 5px;
+}
+
+.pronunciation-item-text {
+    font-family: 'Courier New', monospace;
+    background: #cce5ff;
+    padding: 8px;
+    border-radius: 4px;
+    margin: 5px 0;
+    color: #1e40af;
+}
+
+.voice-btn-small {
+    display: inline-block;
+    padding: 4px 8px;
+    margin-left: 10px;
+    background: #1e40af;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.voice-btn-small:hover {
+    background: #06b6d4;
+}
+
+/* Override any inherited colors */
+.idiom-meaning, .idiom-meaning-title, .idiom-meaning-text {
+    color: #3b82f6;
+}
+
+.explanation-item, .example-item {
+    color: #3b82f6;
+}
+
+.confidence-badge {
+    background: #1e40af;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+</style>
+
+<script src="{{ url_for('static', filename='js/idiom.js') }}"></script>
+{% endblock %}
